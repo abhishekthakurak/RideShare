@@ -1,0 +1,39 @@
+.input {
+  display: block;
+  background: none;
+  padding: 0 10px 8px 0px;
+  margin-top: 8px;
+  border-width: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  outline: none;
+  height: 27px;
+}
+.input:focus + span {
+  display: none;
+}
+
+.input::placeholder {
+  font-style: italic;
+}
+
+.field-lbl {
+  font-size: 16x;
+  color: #333;
+  margin-top: 16px;
+}
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inp-error {
+  margin: 2px 0 0 0;
+  color: rgba(247, 10, 10, 0.74);
+  font-size: 12px;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+}
