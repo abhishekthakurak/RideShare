@@ -1,0 +1,16 @@
+.success-wrap {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    display: flex;
+    flex-direction: column;
+}
+
+.msg-success {
+    margin-top: 28px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 24px;
+}

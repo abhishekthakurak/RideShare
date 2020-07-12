@@ -1,0 +1,36 @@
+.upper-section {
+    height: 170px;
+    background: #E5E3E6;
+    display: flex;
+    padding: 8px 12px;
+}
+
+.search-input-wrap {
+    background-color: #fff;
+    padding: 0 12px;
+    margin: 4px;
+    height: 80px;
+}
+
+.list-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    max-height: 400px;
+    padding: 12px 0;
+    margin: 8px;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+
+.confirm-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.disable-btn {
+    pointer-events: none;
+    background-color: lightgrey;
+}

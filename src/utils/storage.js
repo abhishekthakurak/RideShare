@@ -35,7 +35,6 @@ export function updateUser ({ username, password }) {
 
 // add user if username and mobile does not match with some other user
 export function addUser (state) {
-  console.log('state', state)
   const { username, mobileNumber } = state
   let users = JSON.parse(localStorage.getItem("users"));
   if (!users) {

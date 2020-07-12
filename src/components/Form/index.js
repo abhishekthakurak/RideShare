@@ -1,4 +1,5 @@
-import "./style";
+import Input from "../Input";
+
 export default class Form {
   constructor({ questions, state }) {
     this.questions = questions;
@@ -6,19 +7,10 @@ export default class Form {
   }
 
   getFormElements(question) {
-    const { type, name, id, isError, placeholder, errorMsg } = question;
-    return `
-    <div class='input-wrap'>
-      <div class='field-lbl'>${name}</div>
-      <input
-        class='input'
-        value='${this.state[id]}'
-        id='${id}'
-        placeholder='${placeholder}'
-        type='${type}'
-      />
-      ${isError ? `<span class="inp-error">${errorMsg}</span>` : ""}
-  </div>`;
+    const { id } = question;
+    const input = new Input({data: question, value: this.state[id]})
+
+    return input.render();
   }
 
   render() {

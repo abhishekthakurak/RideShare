@@ -2,6 +2,7 @@ import "./styles.css";
 import Login from "./pages/Login/index.js";
 import Register from "./pages/Register";
 import Search from "./pages/Search";
+import Success from "./pages/Success";
 
 let component;
 
@@ -23,6 +24,9 @@ function getRouteBasedComponent() {
     case "/forgot-password":
       component = new Login(reRender, true);
       break;
+    case "/success":
+      component = new Success();
+      break;
     default:
       return `<div>Oops! this page doesn't exist (code: 404)</div>`;
   }
@@ -37,7 +41,7 @@ function reRender() {
 
 function render() {
   document.getElementById("app").innerHTML = getRouteBasedComponent();
-  component.attachListener(); // attach listener only once
+  component.attachListener && component.attachListener(); // attach listener only once
 }
 
 render();
