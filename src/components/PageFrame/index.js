@@ -14,7 +14,7 @@ export default class PageFrame {
             <img class='logo' src=${logo} alt='Ride Sharing'/>
             ${this.header}
           </div>
-          <div css='child-wrap'>${this.children}</div
+         ${this.children}
         </div>
       </div>
     `;

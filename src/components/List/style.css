@@ -3,8 +3,8 @@
     border: 1px solid #ddd;
     padding: 8px 10px;
     display: flex;
-    margin: 10px;
-    width: calc(50% - 20px);
+    margin: 6px;
+    width: 100%;
 }
 
 .selected {
@@ -62,4 +62,13 @@
     font-size: 18px;
     margin: 20px;
     color: #666;
+}
+
+
+
+@media (min-width: 1100px) {
+    .list-item-wrap {
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
 }

@@ -1,8 +1,11 @@
+html,
 body {
+  height: 100%;
   font-family: sans-serif;
 }
+
 *,
-::before,
-::after {
-  box-sizing: border-box;
-}
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
