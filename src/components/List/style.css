@@ -57,3 +57,9 @@
     margin-right: 4px;
     line-height: 16px;
 }
+
+.no-result {
+    font-size: 18px;
+    margin: 20px;
+    color: #666;
+}

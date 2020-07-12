@@ -2,10 +2,11 @@ import PageFrame from "../../components/PageFrame";
 import './style.css'
 import Input from "../../components/Input";
 import questions from "./questions";
-import { availableCabs } from './searchMockData'
+import { getCabs } from './searchMock'
 import List from "../../components/List";
 import Button from "../../components/Button";
 
+const excludeIds = ['source', 'destination']
 export default class Search {
 
   constructor(reRender) {
@@ -14,8 +15,16 @@ export default class Search {
       source: '',
       destination: ''
     }
-    this.cars = availableCabs
+    this.cars = getCabs(this.state)
     this.selectedCarId = null
+  }
+
+  onInputChange(id, value) {
+    this.state[id] = value
+    this.cars = getCabs(this.state)
+    let searchResultWrapper = document.getElementById('list-wrap')
+    let searchResults = new List({ data: this.cars, selectedId: this.selectedCarId})
+    searchResultWrapper.innerHTML = searchResults.render()
   }
 
   getSearchContent() {
@@ -33,7 +42,7 @@ export default class Search {
           ${sourceInput.render()}
           ${destinationInput.render()}
         </div>
-        <div class='list-wrap'>
+        <div class='list-wrap' id='list-wrap'>
           ${searchResults.render()}
         </div>
           ${confirm.render()}
@@ -50,6 +59,9 @@ export default class Search {
     const containerDiv = document.getElementById("app"); // attaching events on the top
     containerDiv.onclick = event => {
       let eventId = event.target.id
+      if (excludeIds.includes(eventId)) {
+        return
+      }
       if (eventId) {
         if (eventId === 'confirm') {
           window.open('/success', '_self')
