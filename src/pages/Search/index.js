@@ -50,7 +50,7 @@ export default class Search {
     `;
   }
   render() {
-    const pageFrame = new PageFrame("Pick A Ride", this.getSearchContent());
+    const pageFrame = new PageFrame("Pick A Ride", this.getSearchContent(), true);
     return pageFrame.render();
   }
 

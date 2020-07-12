@@ -4,12 +4,16 @@ export function checkForUser({ username, password }) {
     return null;
   }
 
-  return (
+  let isLoginSuccess = (
     users.filter(
       ({ email: storeEmail, mobileNumber: storeMobileNumber, password: storePassword }) =>
         storePassword === password && (storeEmail === username || storeMobileNumber === username)
     ).length > 0
   );
+  if (isLoginSuccess) {
+    setLogin()
+  }
+  return isLoginSuccess
 }
 
 export function updateUser ({ username, password }) {
@@ -55,4 +59,18 @@ export function addUser (state) {
   }
 
   return !userFound
+}
+
+export function setLogin () {
+  localStorage.setItem('isLogin', true)
+}
+
+export function logout () {
+  localStorage.removeItem('isLogin')
+  window.open('/', '_self') // navigate to login screen
+}
+
+export function isLogin () {
+  const isLogin = JSON.parse(localStorage.getItem('isLogin'))
+  return !!isLogin
 }
